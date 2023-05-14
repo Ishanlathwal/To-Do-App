@@ -1,0 +1,42 @@
+<!--  Ye Qw ek new variable bana dia h ng for m jo   todos wala jo variable h jiska array banaya h todos.component  m usse call krne k lia   -->
+<!--  Qw m . title lagayege too this.todos wale array se title aaygea s no p s no     -->
+
+
+<!-- <div *ngFor="let QW of todos">
+    <app-todo-item> </app-todo-item>
+    {{QW.sno}} {{QW.title}} {{QW.desc}}
+
+</div> -->
+
+<!--   ye this .todos wale array m se data utha raha h todos ek variable h jo Todos.ts wali file ki class m h  -->
+
+<app-add-todo (todoAdd)="addTodo($event)"></app-add-todo>
+
+<div *ngIf="this.todos.length===0; else elseBlock">
+    <h4>No Todos To Show</h4>
+</div>
+
+
+<ng-template #elseBlock>
+
+
+    <h4>Your Todo</h4>
+
+    <div *ngFor="let QW of todos">
+        <!--step 1 ye todos (todos.component.ts) wali file se aya iski value dusre variable p dali QW wale p   -->
+
+
+
+
+        <app-todo-item [ASD]="QW" (todoDelete)="deleteTodo($event)" (todoCheckbox)="toggleTodo($event)"></app-todo-item>
+
+        <!-- todos ki vale QW p ayi fir QW ko dusre component p leke jane k lia ASD ek variable banaya [] iss k andar ye ASD QW ki value jo ki todos ki value h usse todo.item wali html p leke jayega  -->
+
+
+        <!--  (todoDelete)="deleteTodo($event)"  ye code ki line todo-item.ts se ayi ki jb click ho too QW p jo data h delete ho jaye 
+            
+            deleteTodo naya variable h jispe ek event fire kia h iss deleteTodo ko todos.component.ts m banaya h -->
+
+    </div>
+
+</ng-template>

@@ -1,0 +1,34 @@
+<!-- 1 sabse phle Todo.ts ki file banayi jisme 1 class define krdi
+2 Fir uss Todo.ts wali file ki class ko todos.component m leke gaya waha uss file ki value ko todos naam k variable p daal dia.
+
+3 fir uss todos wale variable ko constructor m daal dia this ka use krke plus kuch temporary data daal dia
+4 abb todos k pass data h jiska type Todo.js wali file ki class jaisa h 
+5 uss todos wale variable ko todos.component.html m leke gaya 
+6 uss todos ki value ko ek naye variable p daal dia jiska naam QW rakha abb todos ka data QW k pass h . ngFor plus Let ka use krke 
+7 Direct QW p todos ka data show kar skte thae but uss data ko hum todo-item wale component p leke gaye 
+
+8 { <app-todo-item [ASD]="QW"></app-todo-item>} iss code ka use kia. isme app-todo-item new module ka h .
+QW wo variable h jiske pass todos wali array ka data h .
+9 fir QW jiske pass todos ka data h uski value new variable ko dedi jo ASD h 
+10 last m ASD ko todo- item .component.html m aa gaye 
+11 todos-component.ts wali file ki array ka data yaha aa gaya-->
+
+
+<div class="my-3">
+
+
+
+    <h5 [ngClass]="{'strike': !ASD.active}">{{ASD.title}}</h5>
+
+    <p>{{ASD.desc}}</p>
+
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" (click)="onCheckboxClick(ASD)">
+        <label class="form-check-label" for="exampleCheck1">Toggle done</label>
+    </div>
+
+
+    <button (click)="deleteData(ASD)" class="btn btn-danger btn btn-sm">Delete</button>
+
+</div>
+<!--  Button p click hote hi data delete ho jaye iska method todo-item.component.ts m banaya h  -->
